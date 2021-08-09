@@ -2,15 +2,19 @@
 
 public class CameraControl : MonoBehaviour
 {
-    public float m_DampTime = 0.2f;                 
+    // The approximate time we want to move the camera 
+    public float m_DampTime = 0.2f;            
+    // Make sure the tanks aren't the edge of the screen     
     public float m_ScreenEdgeBuffer = 4f;           
+    // Minimum size of the camera, we don't want to get camera zoomed in too much
     public float m_MinSize = 6.5f;                  
-    [HideInInspector] public Transform[] m_Targets; 
+    /*[HideInInspector]*/ public Transform[] m_Targets; 
 
 
     private Camera m_Camera;                        
     private float m_ZoomSpeed;                      
-    private Vector3 m_MoveVelocity;                 
+    private Vector3 m_MoveVelocity;     
+    // The position that camera trys to reach             
     private Vector3 m_DesiredPosition;              
 
 
